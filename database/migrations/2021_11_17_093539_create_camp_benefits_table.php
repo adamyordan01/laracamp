@@ -15,7 +15,7 @@ class CreateCampBenefitsTable extends Migration
     {
         Schema::create('camp_benefits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('camp_id')->constrained('camps');
+            $table->foreignId('camp_id')->constrained('camps')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
             $table->timestamps();
         });
